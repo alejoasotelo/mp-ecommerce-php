@@ -171,10 +171,10 @@ $preference->save();
                                             </h3>
                                         </div>
                                         <h3 >
-                                            <?php echo $_POST['price']; ?>
+                                            <?php echo '$'.$_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo '$'.$_POST['unit']; ?>
+                                            <?php echo $_POST['unit']; ?> unidad
                                         </h3>
                                     </div>
                                     <a class="button mercadopago-button" href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
