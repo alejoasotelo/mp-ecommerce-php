@@ -2,7 +2,7 @@
 include_once __DIR__ .'/bootstrap.php';
 
 $preference = new MercadoPago\Preference();
-$preference->external_reference = 'alesotelo@gmail.com';
+$preference->external_reference = 'soporte@alejosotelo.com.ar';
 $preference->payment_methods = [
     'installments' => MAX_CUOTAS,
     'excluded_payment_methods' => TARJETAS_EXCLUIDAS,
