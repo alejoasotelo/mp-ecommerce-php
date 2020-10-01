@@ -11,7 +11,9 @@ switch ($paymentResult) {
         $title = '<span class="text-success">¡Compra completada exitosamente!</span> 🥳';
         $content = 'Su pago ha sido procesado exitosamente<br>';
 
-        $content .= 'payment_method_id = ' . $_GET['payment_method_id'].'<br>';
+        $payment = MercadoPago\Payment::find_by_id($_GET['collection_id']);
+
+        $content .= 'payment_method_id = ' . $payment->payment_method_id .'<br>';
         $content .= 'external_reference = ' . $_GET['external_reference'].'<br>';
         $content .= 'collection_id = ' . $_GET['collection_id'].'<br>';
 

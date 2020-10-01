@@ -1,5 +1,4 @@
 <?php
-include_once __DIR__ .'/bootstrap.php';
 
 $data = json_encode($_POST);
 
