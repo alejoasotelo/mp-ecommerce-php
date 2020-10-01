@@ -13,8 +13,7 @@ define('MEDIOS_DE_PAGO_EXCLUIDOS', [
     ['id' => 'atm'],
 ]);
 
-$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-define('BASE_URL', dirname($protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']));
+define('BASE_URL', dirname('https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']));
 
 MercadoPago\SDK::setAccessToken(ACCESS_TOKEN);
 MercadoPago\SDK::setPublicKey(PUBLIC_KEY);
