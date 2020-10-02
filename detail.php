@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ .'/bootstrap.php';
+include_once __DIR__.'/bootstrap.php';
 
 $preference = new MercadoPago\Preference();
 $preference->external_reference = 'soporte@alejosotelo.com.ar';
@@ -10,17 +10,17 @@ $preference->payment_methods = [
 ];
 $preference->auto_return = 'approved';
 $preference->back_urls = [
-    'success' => BASE_URL . '/result.php?result=success',
-    'failure' => BASE_URL . '/result.php?result=failure',
-    'pending' => BASE_URL . '/result.php?result=pending',
+    'success' => BASE_URL.'/result.php?result=success',
+    'failure' => BASE_URL.'/result.php?result=failure',
+    'pending' => BASE_URL.'/result.php?result=pending',
 ];
-$preference->notification_url = BASE_URL . '/webhooks.php?source_news=webhooks';
+$preference->notification_url = BASE_URL.'/webhooks.php?source_news=webhooks';
 
 $payer = new MercadoPago\Payer();
 $payer->name = 'Lalo Landa';
 $payer->email = 'test_user_63274575@testuser.com';
 $payer->phone = [
-    'area_code' => '1',
+    'area_code' => '11',
     'number' => '22223333',
 ];
 $payer->address = [
@@ -35,10 +35,10 @@ $item->title = $_POST['title'];
 $item->description = 'Dispositivo móvil de Tienda e-commerce';
 $item->quantity = 1;
 $item->unit_price = (float) $_POST['price'];
-$item->picture_url = BASE_URL . '/' . $_POST['img'];
+$item->picture_url = BASE_URL.'/'.$_POST['img'];
 
+$preference->payer = $payer;
 $preference->items = [$item];
-
 $preference->save();
 ?>
 
