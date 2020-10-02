@@ -1,6 +1,10 @@
 <?php
 
-$data = json_encode($_POST);
+$json_event = file_get_contents('php://input', true);
+//$event = json_decode($json_event);
+file_put_contents('php://stderr', $json_event);
+file_put_contents(__DIR__.'/log/webhook.log', $json_event);
 
+$data = json_encode($_POST);
 file_put_contents('php://stderr', $data);
-file_put_contents(__DIR__.'/log/error.log', $data);
+file_put_contents(__DIR__.'/log/log.log', $data);
